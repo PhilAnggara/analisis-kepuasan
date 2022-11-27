@@ -8,6 +8,11 @@ class MainController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('pages.beranda');
+    }
+    
+    public function admin()
+    {
+        return view('pages.admin.beranda');
     }
 }

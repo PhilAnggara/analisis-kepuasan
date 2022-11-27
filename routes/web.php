@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'index'])->name('dashboard');
+Route::get('/', [MainController::class, 'index'])->name('beranda');
+Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
+    Route::get('/', [MainController::class, 'admin'])->name('admin');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
