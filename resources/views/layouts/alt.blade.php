@@ -20,16 +20,7 @@
 </head>
 <body>
 
-  <div id="app">
-    <div id="main" class="layout-horizontal">
-      <header class="mb-5">
-        @include('includes.header')
-        @include('includes.navbar')
-      </header>
-      @yield('content')
-      {{-- @include('includes.footer') --}}
-    </div>
-  </div>
+  @yield('content')
 
   @stack('prepend-script')
   <script src="{{ url('src/assets/js/bootstrap.js') }}"></script>

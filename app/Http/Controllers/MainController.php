@@ -11,6 +11,11 @@ class MainController extends Controller
         return view('pages.beranda');
     }
     
+    public function kusioner()
+    {
+        return view('pages.kusioner');
+    }
+    
     public function admin()
     {
         return view('pages.admin.beranda');

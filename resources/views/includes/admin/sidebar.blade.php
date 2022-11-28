@@ -2,9 +2,12 @@
   <div class="sidebar-wrapper active">
     <div class="sidebar-header position-relative">
       <div class="d-flex justify-content-between align-items-center">
-        <div class="logo">
+        <div class="logo admin-logo">
           <a href="{{ route('beranda') }}">
-            <img src="{{ url('frontend/images/logo-med.png') }}" alt="Logo"/>
+            <div class="admin-logo d-flex align-items-center p-0">
+              <img src="{{ url('frontend/images/logo-med.png') }}" alt="Logo"/>
+              <h3>KAKM</h3>
+            </div>
           </a>
         </div>
         <div class="theme-toggle d-flex gap-2 align-items-center mt-2">

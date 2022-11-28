@@ -1,0 +1,71 @@
+@import 'fonts'; 
+// @import 'variables';
+
+/*==============================================================
+	Common Styles Initials
+==============================================================*/
+
+/*==============================================================
+	Common Styles End
+==============================================================*/
+/*==============================================================
+	Global Styles Start
+==============================================================*/
+// 00923F
+// FFF500
+
+.homepage-logo {
+	a {
+		img {
+			height: 45px !important;
+			margin: 0 10px 0 0;
+		}
+		h3 {
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 26px;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+	}
+}
+.admin-logo {
+	a {
+		img {
+			height: 45px !important;
+			margin: 0 5px 0 0;
+		}
+		h3 {
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 26px;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+	}
+}
+.alt-logo {
+	.navbar-brand {
+		img {
+			height: 35px !important;
+			margin: 0 5px 0 0;
+		}
+		span {
+			font-family: 'Maven Pro', sans-serif;
+			font-size: 20px;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+	}
+}
+.jumbotron {
+	img {
+		height: 480px;
+		object-fit: cover;
+	}
+}
+/*==============================================================
+	Global Styles End
+==============================================================*/
+// MOBILE
+@media (max-width: 992px) {
+  @import 'mobile';  
+}

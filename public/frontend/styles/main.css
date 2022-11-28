@@ -1,8 +1,56 @@
-/*
-    00923F
-    FFF500
-*/
-.jumbotron img {
-    height: 480px;
-    object-fit: cover;
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+/*==============================================================
+	Common Styles Initials
+==============================================================*/
+/*==============================================================
+	Common Styles End
+==============================================================*/
+/*==============================================================
+	Global Styles Start
+==============================================================*/
+.homepage-logo a img {
+  height: 45px !important;
+  margin: 0 10px 0 0;
 }
+.homepage-logo a h3 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.admin-logo a img {
+  height: 45px !important;
+  margin: 0 5px 0 0;
+}
+.admin-logo a h3 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.alt-logo .navbar-brand img {
+  height: 35px !important;
+  margin: 0 5px 0 0;
+}
+.alt-logo .navbar-brand span {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.jumbotron img {
+  height: 480px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*==============================================================
+	Global Styles End
+==============================================================*//*# sourceMappingURL=main.css.map */

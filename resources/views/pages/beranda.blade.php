@@ -14,7 +14,7 @@
             <img class="card-img-top img-fluid" src="{{ url('frontend/images/jumbotron.jpg') }}" alt="">
             <div class="card-body text-center">
               <h4 class="card-title">Kusioner Tingkat Kepuasan Pelayanan PTSP</h4>
-              <button class="btn btn-primary block">Mulai</button>
+              <a href="{{ route('kusioner') }}" class="btn btn-lg btn-primary block">Mulai</a>
             </div>
           </div>
         </div>

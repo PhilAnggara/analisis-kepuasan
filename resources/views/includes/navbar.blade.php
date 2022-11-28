@@ -11,15 +11,6 @@
           <span><i class="bi bi-file-earmark-text-fill"></i> Kusioner</span>
         </a>
       </li>
-      @auth
-        @if (auth()->user()->role == 'Admin')
-          <li class="menu-item">
-            <a href="{{ route('admin') }}" class="menu-link">
-              <span><i class="bi bi-person-workspace"></i> Admin Panel</span>
-            </a>
-          </li>
-        @endif
-      @endauth
     </ul>
   </div>
 </nav>

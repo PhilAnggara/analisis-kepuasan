@@ -1,6 +1,6 @@
 <div class="header-top">
   <div class="container">
-    <div class="logo">
+    <div class="logo homepage-logo">
       <a class="d-flex align-items-center" href="{{ route('beranda') }}">
         <img src="{{ url('frontend/images/logo-med.png') }}" alt="Logo" />
         <h3>Kementerian Agama Kabupaten Minahasa</h3>
@@ -18,7 +18,7 @@
             class="user-dropdown d-flex align-items-center dropend dropdown-toggle" data-bs-toggle="dropdown"
             aria-expanded="false">
             <div class="avatar avatar-md2">
-              <img src="{{ url('src/assets/images/faces/1.jpg') }}" alt="Avatar" />
+              <img src="https://ui-avatars.com/api/?background=00923F&color=fff&bold=true&name={{ auth()->user()->name }}" alt="Avatar" />
             </div>
             <div class="text">
               <h6 class="user-dropdown-name">{{ auth()->user()->name }}</h6>
@@ -29,9 +29,9 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
             <li>
-              <a class="dropdown-item" href="#">
-                <i class="icon-mid bi bi-person me-2"></i>
-                My Account
+              <a class="dropdown-item" href="{{ route('admin') }}">
+                <i class="icon-mid bi bi-person-workspace me-2"></i>
+                Admin Panel
               </a>
             </li>
             <li>

@@ -7,7 +7,8 @@
   <title>@yield('title')</title>
 
   @stack('prepend-style')
-  <link rel="stylesheet" href="{{ url('src/assets/css/main/app.css') }}">
+  <link rel="stylesheet" href="{{ url('src/assets/css/main/main.css') }}">
+  <link rel="stylesheet" href="{{ url('src/assets/css/main/main-dark.css') }}">
   <link rel="stylesheet" href="{{ url('src/assets/css/main/app-dark.css') }}">
   {{-- <link rel="shortcut icon" href="{{ url('src/assets/images/logo/favicon.svg') }}" type="image/x-icon"> --}}
   <link rel="shortcut icon" href="{{ url('frontend/images/favicon.png') }}" type="image/png">

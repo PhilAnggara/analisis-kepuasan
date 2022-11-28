@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('beranda');
+Route::get('kusioner', [MainController::class, 'kusioner'])->name('kusioner');
 Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/', [MainController::class, 'admin'])->name('admin');
 });
