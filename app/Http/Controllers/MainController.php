@@ -20,4 +20,12 @@ class MainController extends Controller
     {
         return view('pages.admin.beranda');
     }
+    public function adminKusioner()
+    {
+        return view('pages.admin.kusioner');
+    }
+    public function analisis()
+    {
+        return view('pages.admin.analisis');
+    }
 }

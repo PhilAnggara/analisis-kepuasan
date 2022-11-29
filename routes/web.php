@@ -19,6 +19,9 @@ Route::get('/', [MainController::class, 'index'])->name('beranda');
 Route::get('kusioner', [MainController::class, 'kusioner'])->name('kusioner');
 Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/', [MainController::class, 'admin'])->name('admin');
+    Route::get('kusioner', [MainController::class, 'adminKusioner'])->name('admin-kusioner');
+    Route::get('analisis', [MainController::class, 'analisis'])->name('analisis');
+    Route::get('kelola-admin', [MainController::class, 'kelolaAdmin'])->name('kelola-admin')->middleware('role:Super Admin');
 });
 
 Route::get('/dashboard', function () {

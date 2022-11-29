@@ -3,13 +3,13 @@
 
 @section('content')
 <div class="content-wrapper container">
-  <div class="page-heading">
+  <div data-aos="fade-right" class="page-heading">
     <h3>Dashboard</h3>
   </div>
   <div class="page-content">
     <section class="row">
       <div class="col-12">
-        <div class="card shadow">
+        <div data-aos="zoom-in" data-aos-delay="100" class="card shadow">
           <div class="card-content jumbotron">
             <img class="card-img-top img-fluid" src="{{ url('frontend/images/jumbotron.jpg') }}" alt="">
             <div class="card-body text-center">

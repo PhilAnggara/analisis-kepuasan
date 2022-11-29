@@ -22,10 +22,10 @@ class UserSeeder extends Seeder
             'role' => 'Admin',
             'password' => Hash::make('Admin123')
         ]);
-        User::create([
-            'name' => 'Nama Pengguna',
-            'email' => 'pengguna@gmail.com',
-            'password' => Hash::make('Pengguna123')
-        ]);
+        // User::create([
+        //     'name' => 'Nama Pengguna',
+        //     'email' => 'pengguna@gmail.com',
+        //     'password' => Hash::make('Pengguna123')
+        // ]);
     }
 }

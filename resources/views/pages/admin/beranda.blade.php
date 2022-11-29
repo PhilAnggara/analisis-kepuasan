@@ -13,19 +13,118 @@
   </div>
 
   <section class="section mt-4">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Example Content</h4>
+    
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div data-aos="zoom-in" data-aos-delay="100" class="card shadow-sm">
+          <div class="card-header">
+            <h4>Responden Terakhir</h4>
+          </div>
+          <div class="card-content pb-4">
+            <div class="recent-message d-flex px-4 py-3">
+              <div class="avatar avatar-lg">
+                <img src="https://ui-avatars.com/api/?background=1faf5d&color=fff&bold=true&name=GP"/>
+              </div>
+              <div class="name ms-4">
+                <h5 class="mb-0">Geovany Pitoy</h5>
+                <small class="text-muted mb-0">5 menit yang lalu</small>
+              </div>
+            </div>
+            <div class="recent-message d-flex px-4 py-3">
+              <div class="avatar avatar-lg">
+                <img src="https://ui-avatars.com/api/?background=1faf5d&color=fff&bold=true&name=SR"/>
+              </div>
+              <div class="name ms-4">
+                <h5 class="mb-0">Serwin Rumagit</h5>
+                <small class="text-muted mb-0">20 menit yang lalu</small>
+              </div>
+            </div>
+            <div class="recent-message d-flex px-4 py-3">
+              <div class="avatar avatar-lg">
+                <img src="https://ui-avatars.com/api/?background=1faf5d&color=fff&bold=true&name=EM"/>
+              </div>
+              <div class="name ms-4">
+                <h5 class="mb-0">Enggo Merentek</h5>
+                <small class="text-muted mb-0">1 jam yang lalu</small>
+              </div>
+            </div>
+            <div class="recent-message d-flex px-4 py-3">
+              <div class="avatar avatar-lg">
+                <img src="https://ui-avatars.com/api/?background=1faf5d&color=fff&bold=true&name=GL"/>
+              </div>
+              <div class="name ms-4">
+                <h5 class="mb-0">Glen Lengkong</h5>
+                <small class="text-muted mb-0">1 jam yang lalu</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Consectetur quas omnis laudantium tempore exercitationem,
-        expedita aspernatur sed officia asperiores unde tempora maxime
-        odio reprehenderit distinctio incidunt! Vel aspernatur dicta
-        consequatur!
+      <div class="col-12 col-md-9">
+        <div data-aos="zoom-in" data-aos-delay="150" class="card shadow-sm">
+          <div class="card-header">
+            <h4>Responden Bulanan</h4>
+          </div>
+          <div class="card-body">
+            <div id="respondenBulanan"></div>
+          </div>
+        </div>
       </div>
     </div>
+
   </section>
 
 </div>
 @endsection
+
+
+
+@push('addon-script')
+<script>
+  var optionsRespondenBulanan = {
+    chart: {
+      type: 'bar',
+      height: 300,
+      zoom: {
+        enabled: false
+      }
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 10
+      }
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'],
+        opacity: 0.5
+      },
+    },
+    colors:'#2ba15e',
+    series: [{
+      name: "Responden",
+      data: [9, 20, 30, 20, 10, 20, 30, 20, 10, 20, 30, 20]
+    }],
+    xaxis: {
+      categories: 
+      [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+    },
+  };
+
+  var chartRespondenBulanan = new ApexCharts(document.querySelector("#respondenBulanan"), optionsRespondenBulanan);
+  chartRespondenBulanan.render();
+</script>
+@endpush

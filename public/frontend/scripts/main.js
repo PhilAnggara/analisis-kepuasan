@@ -1,3 +1,9 @@
+AOS.init({
+  once: true,
+  delay: 50,
+  // duration: 600
+});
+
 function keluar() {
   Swal.fire({
     title: 'Keluar?',
