@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\MyFunction;
 use App\Models\Kusioner;
+use App\Models\Responden;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -38,11 +40,40 @@ class MainController extends Controller
 
     public function adminKusioner()
     {
-        return view('pages.admin.kusioner');
+        $items = Kusioner::all();
+        return view('pages.admin.kusioner', [
+            'items' => $items,
+        ]);
     }
 
     public function analisis()
     {
-        return view('pages.admin.analisis');
+        $items = Kusioner::all();
+        return view('pages.admin.analisis', [
+            'items' => $items,
+        ]);
+    }
+
+    public function analisisDetail($id)
+    {
+        $item = Kusioner::find($id)->with('responden.jawaban')->first();
+        $responden = Responden::where('id_kusioner', $item->id)->where('selesai',1)->get();
+        $total = MyFunction::total($item);
+        $mean = MyFunction::mean($total, $responden);
+        $wfws = MyFunction::wfws($mean);
+        $wt = MyFunction::wt($wfws);
+        $csi = MyFunction::csi($wt);
+        $gap = MyFunction::gap($mean);
+
+        return view('pages.admin.analisis-detail', [
+            'item' => $item,
+            'responden' => $responden,
+            'total' => $total,
+            'mean' => $mean,
+            'wfws' => $wfws,
+            'wt' => $wt,
+            'csi' => $csi,
+            'gap' => $gap,
+        ]);
     }
 }

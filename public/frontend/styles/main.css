@@ -45,10 +45,22 @@
   margin-bottom: 0;
 }
 
-.jumbotron img {
+.jumbotron-card {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.jumbotron-card .jumbotron img {
   height: 480px;
   -o-object-fit: cover;
      object-fit: cover;
+  transform-origin: 50% 100%;
+  transition: transform 2s;
+}
+.jumbotron-card:hover {
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+}
+.jumbotron-card:hover img {
+  transform: scale(1.1);
 }
 
 .card-plus {

@@ -12,35 +12,42 @@
     </div>
   </div>
 
+  @php($aosDelay = 100)
+
   <section class="section mt-4">
     <div class="row row-cols-1 row-cols-md-4 g-4">
 
       <div class="col">
-        <div data-aos="zoom-in" data-aos-delay="100" class="card card-plus h-card h-350">
+        <div data-aos="zoom-in" data-aos-delay="{{ $aosDelay }}" class="card card-plus h-card h-350">
           <div class="card-body d-flex justify-content-center align-items-center">
             <i class="fas fa-user-plus fa-5x"></i>
-            <a href="{{ route('admin-kusioner') }}" class="stretched-link"></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#tambah" class="stretched-link"></a>
           </div>
         </div>
       </div>
 
       @foreach ($items as $item)
+        @php($aosDelay += 100)
         <div class="col">
-          <div data-aos="zoom-in" data-aos-delay="150" class="card h-card-img h-350">
+          <div data-aos="zoom-in" data-aos-delay="{{ $aosDelay }}" class="card h-card-img h-350">
             <img src="https://ui-avatars.com/api/?background=1faf5d&color=fff&bold=true&name={{ $item->name }}" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">{{ $item->name }}</h5>
               <p class="card-subtitle text-muted">{{ $item->email }}</p>
             </div>
             <div class="card-footer py-2 text-center">
-              <button class="btn btn-sm icon icon-left">
+              <button class="btn btn-sm icon icon-left" data-bs-toggle="modal" data-bs-target="#reset-{{ $item->id }}">
                 <i class="fal fa-lock-keyhole"></i>
                 Reset Password
               </button>
-              <button class="btn btn-sm icon icon-left">
+              <button class="btn btn-sm icon icon-left" onclick="hapusData({{ $item->id }}, 'Hapus Admin', 'Yakin ingin menghapus {{ $item->name }}?')">
                 <i class="fal fa-user-minus"></i>
                 Hapus Admin
               </button>
+              <form action="{{ route('kelola-admin.destroy', $item->id) }}" id="hapus-{{ $item->id }}" method="POST">
+                @method('delete')
+                @csrf
+              </form>
             </div>
           </div>
         </div>
@@ -50,4 +57,5 @@
   </section>
 
 </div>
+@include('includes.modals.admin')
 @endsection

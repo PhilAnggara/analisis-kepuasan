@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +23,8 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin,Super Admin'])->group(fu
     Route::get('/', [MainController::class, 'admin'])->name('admin');
     Route::get('kusioner', [MainController::class, 'adminKusioner'])->name('admin-kusioner');
     Route::get('analisis', [MainController::class, 'analisis'])->name('analisis');
-    Route::get('kelola-admin', [UserController::class, 'index'])->name('kelola-admin')->middleware('role:Super Admin');
+    Route::get('analisis/{item:id}', [MainController::class, 'analisisDetail'])->name('analisis.detail');
+    Route::resource('kelola-admin', AdminController::class)->middleware('role:Super Admin');
 });
 
 Route::get('/dashboard', function () {

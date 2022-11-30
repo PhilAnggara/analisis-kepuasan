@@ -15,7 +15,7 @@
   <section class="section mt-5">
     <div class="row">
 
-      <div class="col-12 col-md-3">
+      {{-- <div class="col-12 col-md-3">
         <div data-aos="zoom-in" data-aos-delay="100" class="card shadow-sm">
           <div class="card-header">
             <h4>Responden Terakhir</h4>
@@ -59,9 +59,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
-      <div class="col-12 col-md-9">
+      <div class="col-12 col-md-12">
         <div data-aos="zoom-in" data-aos-delay="150" class="card shadow-sm">
           <div class="card-header">
             <h4>Responden Bulanan</h4>
@@ -85,7 +85,7 @@
   var optionsRespondenBulanan = {
     chart: {
       type: 'bar',
-      height: 300,
+      height: 500,
       zoom: {
         enabled: false
       }
@@ -127,5 +127,13 @@
 
   var chartRespondenBulanan = new ApexCharts(document.querySelector("#respondenBulanan"), optionsRespondenBulanan);
   chartRespondenBulanan.render();
+
+  // change text on legend
+  var svg = document.querySelector('.exportSVG');
+  var png = document.querySelector('.exportPNG');
+  var csv = document.querySelector('.exportCSV');
+  svg.innerHTML = svg.innerHTML.replace('Download SVG', 'Unduh SVG');
+  png.innerHTML = png.innerHTML.replace('Download PNG', 'Unduh PNG');
+  csv.innerHTML = csv.innerHTML.replace('Download CSV', 'Unduh CSV');
 </script>
 @endpush

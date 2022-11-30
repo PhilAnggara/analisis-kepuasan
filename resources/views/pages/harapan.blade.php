@@ -34,7 +34,7 @@
         </div>
         <div class="col-md-6">
           <label class="form-label" for="telp">No. Telepon</label>
-          <input type="number" id="telp" class="form-control" name="telp" required>
+          <input type="text" id="telp" class="form-control" name="telp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
         </div>
         <div class="col-md-6">
           <label class="form-label" for="pendidikan">Pendidikan</label>

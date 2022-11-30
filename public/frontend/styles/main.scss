@@ -56,10 +56,22 @@
 		}
 	}
 }
-.jumbotron {
-	img {
-		height: 480px;
-		object-fit: cover;
+.jumbotron-card {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	.jumbotron {
+		img {
+			height: 480px;
+			object-fit: cover;
+			transform-origin: 50% 100%;
+			transition: transform 2s;
+		}
+	}
+	&:hover {
+		box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+		img {
+			transform: scale(1.1);
+		}
 	}
 }
 

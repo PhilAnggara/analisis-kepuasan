@@ -10,7 +10,7 @@
     <section class="row">
       <div class="col-12">
         @foreach ($items as $item)
-          <div data-aos="zoom-in" data-aos-delay="100" class="card shadow">
+          <div data-aos="zoom-in" data-aos-delay="100" class="card jumbotron-card">
             <div class="card-content jumbotron">
               <img class="card-img-top img-fluid" src="{{ url('frontend/images/jumbotron.jpg') }}" alt="">
               <div class="card-body text-center">
