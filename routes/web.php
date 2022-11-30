@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('beranda');
-Route::get('kusioner', [MainController::class, 'kusioner'])->name('kusioner');
-Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
+Route::get('kusioner-harapan-{item:id}', [MainController::class, 'harapan'])->name('kusioner-harapan');
+Route::get('kusioner-persepsi-{item:id}', [MainController::class, 'persepsi'])->name('kusioner-persepsi');
+Route::prefix('admin')->middleware(['auth', 'role:Admin,Super Admin'])->group(function () {
     Route::get('/', [MainController::class, 'admin'])->name('admin');
     Route::get('kusioner', [MainController::class, 'adminKusioner'])->name('admin-kusioner');
     Route::get('analisis', [MainController::class, 'analisis'])->name('analisis');
-    Route::get('kelola-admin', [MainController::class, 'kelolaAdmin'])->name('kelola-admin')->middleware('role:Super Admin');
+    Route::get('kelola-admin', [UserController::class, 'index'])->name('kelola-admin')->middleware('role:Super Admin');
 });
 
 Route::get('/dashboard', function () {

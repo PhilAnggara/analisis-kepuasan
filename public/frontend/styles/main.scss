@@ -75,6 +75,25 @@
 		box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
 	}
 }
+.h-card-img {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	img {
+		height: 200px;
+		object-fit: cover;
+		transform-origin: 50% 100%;
+		transition: transform .15s;
+	}
+	&:hover {
+		box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+		img {
+			transform: scale(1.1);
+		}
+	}
+}
+.h-350 {
+	height: 350px;
+}
 
 /*==============================================================
 	Global Styles End

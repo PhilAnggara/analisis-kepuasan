@@ -12,9 +12,9 @@
     </div>
   </div>
 
-  <section class="section mt-4">
-    
+  <section class="section mt-5">
     <div class="row">
+
       <div class="col-12 col-md-3">
         <div data-aos="zoom-in" data-aos-delay="100" class="card shadow-sm">
           <div class="card-header">
@@ -60,6 +60,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-12 col-md-9">
         <div data-aos="zoom-in" data-aos-delay="150" class="card shadow-sm">
           <div class="card-header">
@@ -70,8 +71,8 @@
           </div>
         </div>
       </div>
+      
     </div>
-
   </section>
 
 </div>

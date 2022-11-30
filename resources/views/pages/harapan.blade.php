@@ -12,17 +12,17 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="card mt-5">
+<div class="container pb-5">
+  <div class="card shadow-sm mt-5">
     <div class="card-header">
-      <h4 class="card-title">Kusioner Tingkat Kepuasan Pelayanan PTSP</h4>
+      <h4 class="card-title">Kusioner Harapan</h4>
     </div>
-    <div class="card-body">
+    {{-- <div class="card-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ea unde vel alias, eum quam necessitatibus dolorem similique placeat quibusdam?</p>
-    </div>
+    </div> --}}
   </div>
 
-  <div class="card">
+  <div class="card shadow-sm">
     <div class="card-header">
       Data Diri
     </div>
@@ -30,11 +30,11 @@
       <div class="row">
         <div class="col-md-6">
           <label class="form-label" for="nama">Nama</label>
-          <input type="text" id="nama" class="form-control" name="nama" required>
+          <input type="text" id="nama" class="form-control" name="nama" onkeydown="return /[a-z, ]/i.test(event.key)" required>
         </div>
         <div class="col-md-6">
-          <label class="form-label" for="usia">Usia</label>
-          <input type="number" id="usia" class="form-control" name="usia" required>
+          <label class="form-label" for="telp">No. Telepon</label>
+          <input type="number" id="telp" class="form-control" name="telp" required>
         </div>
         <div class="col-md-6">
           <label class="form-label" for="pendidikan">Pendidikan</label>
@@ -63,6 +63,38 @@
         </div>
       </div>
     </div>
+  </div>
+
+  @foreach ($item->pertanyaan as $i)
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <p>{{ $loop->iteration }}. {{ $i->harapan }}</p>
+        <input type="hidden" name="pertanyaan[{{ $i->id }}]" value="">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-1">
+          <label class="form-check-label" for="pilihan-{{ $i->id }}-1">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-2">
+          <label class="form-check-label" for="pilihan-{{ $i->id }}-2">2</label>
+        </div>      
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-3">
+          <label class="form-check-label" for="pilihan-{{ $i->id }}-3">3</label>
+        </div>      
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-4">
+          <label class="form-check-label" for="pilihan-{{ $i->id }}-4">4</label>
+        </div>      
+      </div>
+    </div>
+  @endforeach
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-primary icon icon-left">
+      <i class="fa fa-paper-plane me-2"></i>
+      Submit
+    </button>
   </div>
 
 </div>

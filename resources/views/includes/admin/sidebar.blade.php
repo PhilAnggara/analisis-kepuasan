@@ -67,12 +67,14 @@
           </a>
         </li>
 
-        <li class="sidebar-item {{ Request::is('admin/kelola-admin') ? 'active' : '' }}">
-          <a href="{{ route('kelola-admin') }}" class="sidebar-link">
-            <i class="bi bi-person-lines-fill"></i>
-            <span>Kelola Admin</span>
-          </a>
-        </li>
+        @if (auth()->user()->role == 'Super Admin')
+          <li class="sidebar-item {{ Request::is('admin/kelola-admin') ? 'active' : '' }}">
+            <a href="{{ route('kelola-admin') }}" class="sidebar-link">
+              <i class="bi bi-person-lines-fill"></i>
+              <span>Kelola Admin</span>
+            </a>
+          </li>
+        @endif
 
       </ul>
     </div>

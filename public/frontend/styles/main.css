@@ -63,6 +63,28 @@
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
 }
 
+.h-card-img {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.h-card-img img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform-origin: 50% 100%;
+  transition: transform 0.15s;
+}
+.h-card-img:hover {
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+}
+.h-card-img:hover img {
+  transform: scale(1.1);
+}
+
+.h-350 {
+  height: 350px;
+}
+
 /*==============================================================
 	Global Styles End
 ==============================================================*//*# sourceMappingURL=main.css.map */
