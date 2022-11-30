@@ -10,7 +10,7 @@ function hapusData(id, title, text) {
     text: text,
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#435EBE',
+    confirmButtonColor: '#00923F',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Ya, hapus!',
     cancelButtonText: 'Batal'
@@ -27,7 +27,7 @@ function keluar() {
     text: "Tekan tombol Keluar di bawah ini untuk mengakhiri sesi anda!",
     icon: 'question',
     showCancelButton: true,
-    confirmButtonColor: '#435EBE',
+    confirmButtonColor: '#00923F',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Keluar!',
     cancelButtonText: 'Batal'
