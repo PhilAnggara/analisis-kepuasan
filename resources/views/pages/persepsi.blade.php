@@ -22,55 +22,58 @@
     </div> --}}
   </div>
 
-  <div class="card shadow-sm">
-    <div class="card-header">
-      Responden
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col">
-          <select class="form-select" name="responden" id="responden" required>
-            <option value="" selected disabled>-- Pilih responden --</option>
-            @foreach ($responden as $r)
-              <option value="{{ $r->id }}">{{ $r->nama }}</option>
-            @endforeach
-          </select>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  @foreach ($item->pertanyaan as $i)
+  <form action="{{ route('kusioner-persepsi.store') }}" method="post">
+    @csrf
     <div class="card shadow-sm">
+      <div class="card-header">
+        Responden
+      </div>
       <div class="card-body">
-        <p>{{ $loop->iteration }}. {{ $i->persepsi }}</p>
-        <input type="hidden" name="pertanyaan[{{ $i->id }}]" value="">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-1">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-1">1</label>
+        <div class="row">
+          <div class="col">
+            <select class="form-select" name="id_responden" id="id_responden" required>
+              <option value="" selected disabled>-- Pilih responden --</option>
+              @foreach ($responden as $r)
+                <option value="{{ $r->id }}">{{ $r->nama }}</option>
+              @endforeach
+            </select>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-2">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-2">2</label>
-        </div>      
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-3">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-3">3</label>
-        </div>      
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-4">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-4">4</label>
-        </div>      
       </div>
     </div>
-  @endforeach
+  
+    @foreach ($item->pertanyaan as $i)
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <p>{{ $loop->iteration }}. {{ $i->persepsi }}</p>
+          <input type="hidden" name="pertanyaan[{{ $i->id }}]" value="">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-1" value="1" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-2" value="2" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-2">2</label>
+          </div>      
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-3" value="3" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-3">3</label>
+          </div>      
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-4" value="4" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-4">4</label>
+          </div>      
+        </div>
+      </div>
+    @endforeach
 
-  <div class="d-flex justify-content-end">
-    <button class="btn btn-primary icon icon-left">
-      <i class="fa fa-paper-plane me-2"></i>
-      Submit
-    </button>
-  </div>
+    <div class="d-flex justify-content-end">
+      <button type="submit"  class="btn btn-primary icon icon-left">
+        <i class="fa fa-paper-plane me-2"></i>
+        Submit
+      </button>
+    </div>
+  </form>
 
 </div>
 @endsection

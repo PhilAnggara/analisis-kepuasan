@@ -22,80 +22,84 @@
     </div> --}}
   </div>
 
-  <div class="card shadow-sm">
-    <div class="card-header">
-      Data Diri
-    </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-6">
-          <label class="form-label" for="nama">Nama</label>
-          <input type="text" id="nama" class="form-control" name="nama" onkeydown="return /[a-z, ]/i.test(event.key)" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label" for="telp">No. Telepon</label>
-          <input type="text" id="telp" class="form-control" name="telp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label" for="pendidikan">Pendidikan</label>
-          <select class="form-select" name="pendidikan" id="pendidikan" required>
-            <option value="" selected disabled>-- Pilih pendidikan --</option>
-            <option>SD</option>
-            <option>SMP</option>
-            <option>SMA</option>
-            <option>D3</option>
-            <option>S1</option>
-            <option>S2</option>
-            <option>S3</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label" for="alamat">Alamat</label>
-          <input type="text" id="alamat" class="form-control" name="alamat" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label" for="pekerjaan">Pekerjaan</label>
-          <input type="text" id="pekerjaan" class="form-control" name="pekerjaan" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label" for="kunjungan">Kunjungan yang ke :</label>
-          <input type="number" id="kunjungan" class="form-control" name="kunjungan" required>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  @foreach ($item->pertanyaan as $i)
+  <form action="{{ route('kusioner-harapan.store') }}" method="post">
+    @csrf
+    <input type="hidden" name="id_kusioner" value="{{ $item->id }}">
     <div class="card shadow-sm">
+      <div class="card-header">
+        Data Diri
+      </div>
       <div class="card-body">
-        <p>{{ $loop->iteration }}. {{ $i->harapan }}</p>
-        <input type="hidden" name="pertanyaan[{{ $i->id }}]" value="">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-1">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-1">1</label>
+        <div class="row">
+          <div class="col-md-6">
+            <label class="form-label" for="nama">Nama</label>
+            <input type="text" id="nama" class="form-control" name="nama" onkeydown="return /[a-z, ]/i.test(event.key)" autocomplete="off" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="telp">No. Telepon</label>
+            <input type="text" id="telp" class="form-control" name="telp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="pendidikan">Pendidikan</label>
+            <select class="form-select" name="pendidikan" id="pendidikan" required>
+              <option value="" selected disabled>-- Pilih pendidikan --</option>
+              <option>SD</option>
+              <option>SMP</option>
+              <option>SMA</option>
+              <option>D3</option>
+              <option>S1</option>
+              <option>S2</option>
+              <option>S3</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="alamat">Alamat</label>
+            <input type="text" id="alamat" class="form-control" name="alamat" autocomplete="off" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="pekerjaan">Pekerjaan</label>
+            <input type="text" id="pekerjaan" class="form-control" name="pekerjaan" autocomplete="off" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="kunjungan">Kunjungan yang ke :</label>
+            <input type="number" id="kunjungan" class="form-control" name="kunjungan" required>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-2">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-2">2</label>
-        </div>      
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-3">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-3">3</label>
-        </div>      
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-4">
-          <label class="form-check-label" for="pilihan-{{ $i->id }}-4">4</label>
-        </div>      
       </div>
     </div>
-  @endforeach
-
-  <div class="d-flex justify-content-end">
-    <button class="btn btn-primary icon icon-left">
-      <i class="fa fa-paper-plane me-2"></i>
-      Submit
-    </button>
-  </div>
+  
+    @foreach ($item->pertanyaan as $i)
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <p>{{ $loop->iteration }}. {{ $i->harapan }}</p>
+          <input type="hidden" name="pertanyaan[{{ $i->id }}]" value="">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-1" value="1" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-2" value="2" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-2">2</label>
+          </div>      
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-3" value="3" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-3">3</label>
+          </div>      
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-4" value="4" required>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-4">4</label>
+          </div>      
+        </div>
+      </div>
+    @endforeach
+  
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary icon icon-left">
+        <i class="fa fa-paper-plane me-2"></i>
+        Submit
+      </button>
+    </div>
+  </form>
 
 </div>
 @endsection

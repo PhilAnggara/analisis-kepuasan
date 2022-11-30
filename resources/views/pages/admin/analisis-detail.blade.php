@@ -121,16 +121,16 @@
                 @foreach ($mean as $m)
                   <tr>
                     <th>{{ $loop->iteration }}</th>
-                    <td>{{ $m['harapan'] }}</td>
-                    <td>{{ $m['persepsi'] }}</td>
+                    <td>{{ number_format($m['harapan'], 2) }}</td>
+                    <td>{{ number_format($m['persepsi'], 2) }}</td>
                   </tr>
                 @endforeach
               </tbody>
               <tfoot class="table-success">
                 <tr>
                   <th>Total</th>
-                  <td>{{ $mean->sum('harapan') }}</td>
-                  <td>{{ $mean->sum('persepsi') }}</td>
+                  <td>{{ number_format($mean->sum('harapan'), 2) }}</td>
+                  <td>{{ number_format($mean->sum('persepsi'), 2) }}</td>
                 </tr>
               </tfoot>
             </table>
@@ -199,9 +199,9 @@
                 @foreach ($gap as $g)
                   <tr>
                     <th>{{ $loop->iteration }}</th>
-                    <td>{{ $g['harapan'] }}</td>
-                    <td>{{ $g['persepsi'] }}</td>
-                    <td>{{ $g['gap'] }}</td>
+                    <td>{{ number_format($g['harapan'], 2) }}</td>
+                    <td>{{ number_format($g['persepsi'], 2) }}</td>
+                    <td>{{ number_format($g['gap'], 2) }}</td>
                     <td>{{ $g['rank'] }}</td>
                   </tr>
                 @endforeach

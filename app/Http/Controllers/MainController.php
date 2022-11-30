@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\MyFunction;
+use App\Models\Jawaban;
 use App\Models\Kusioner;
 use App\Models\Responden;
 use Illuminate\Http\Request;
@@ -24,6 +25,30 @@ class MainController extends Controller
         ]);
     }
     
+    public function harapanStore(Request $request)
+    {
+        // dd($request->all());
+        $responden = Responden::create([
+            'id_kusioner' => $request->id_kusioner,
+            'nama' => $request->nama,
+            'telp' => $request->telp,
+            'pendidikan' => $request->pendidikan,
+            'alamat' => $request->alamat,
+            'pekerjaan' => $request->pekerjaan,
+            'kunjungan' => $request->kunjungan,
+        ]);
+
+        foreach ($request->pertanyaan as $key => $value) {
+            Jawaban::create([
+                'id_responden' => $responden->id,
+                'id_pertanyaan' => $key,
+                'harapan' => $value,
+            ]);
+        }
+
+        return redirect()->route('beranda')->with('success', 'Jawaban berhasil dikirim!');
+    }
+    
     public function persepsi(Kusioner $item)
     {
         $responden = $item->responden()->where('selesai', 0)->get();
@@ -31,6 +56,27 @@ class MainController extends Controller
             'item' => $item,
             'responden' => $responden,
         ]);
+    }
+    public function persepsiStore(Request $request)
+    {
+        $responden = Responden::find($request->id_responden);
+        $jawaban = Jawaban::where('id_responden', $request->id_responden)->get();
+        // return response()->json([
+        //     'request' => $request->all(),
+        //     'responden' => $responden,
+        //     'jawaban' => $jawaban,
+        // ]);
+
+        $responden->update([
+            'selesai' => 1,
+        ]);
+        foreach ($jawaban as $j) {
+            $j->update([
+                'persepsi' => $request->pertanyaan[$j->id_pertanyaan],
+            ]);
+        }
+
+        return redirect()->route('beranda')->with('success', 'Jawaban berhasil dikirim!');
     }
     
     public function admin()

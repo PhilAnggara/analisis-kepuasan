@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('beranda');
 Route::get('kusioner-harapan-{item:id}', [MainController::class, 'harapan'])->name('kusioner-harapan');
+Route::post('kusioner-harapan', [MainController::class, 'harapanStore'])->name('kusioner-harapan.store');
 Route::get('kusioner-persepsi-{item:id}', [MainController::class, 'persepsi'])->name('kusioner-persepsi');
+Route::post('kusioner-persepsi', [MainController::class, 'persepsiStore'])->name('kusioner-persepsi.store');
 Route::prefix('admin')->middleware(['auth', 'role:Admin,Super Admin'])->group(function () {
     Route::get('/', [MainController::class, 'admin'])->name('admin');
     Route::get('kusioner', [MainController::class, 'adminKusioner'])->name('admin-kusioner');
