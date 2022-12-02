@@ -12,6 +12,13 @@
 /*==============================================================
 	Global Styles Start
 ==============================================================*/
+.navbar-title {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
 .homepage-logo a img {
   height: 45px !important;
   margin: 0 10px 0 0;

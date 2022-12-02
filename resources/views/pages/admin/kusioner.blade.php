@@ -21,7 +21,7 @@
         <div data-aos="zoom-in" data-aos-delay="{{ $aosDelay }}" class="card h-100 card-plus h-card">
           <div class="card-body d-flex justify-content-center align-items-center">
             <i class="fas fa-plus fa-5x"></i>
-            <a href="{{ route('admin-kusioner') }}" class="stretched-link"></a>
+            <a href="{{ route('kusioner.create') }}" class="stretched-link"></a>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
               <h5 class="card-title">{{ $item->nama_kusioner }}</h5>
               <p class="card-text"><small class="text-muted">{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY') }}</small></p>
               <p class="card-text">{{ $item->deskripsi }}</p>
-              <a href="{{ route('admin-kusioner') }}" class="stretched-link"></a>
+              <a href="{{ route('kusioner.show', $item->id) }}" class="stretched-link"></a>
             </div>
             <div class="card-footer py-2">
               <i class="fal fa-users"></i>

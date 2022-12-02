@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('pendidikan');
             $table->string('alamat');
             $table->string('pekerjaan');
-            $table->integer('kunjungan');
+            $table->string('no_antrian');
             $table->boolean('selesai')->default(false);
             $table->timestamps();
             $table->softDeletes();

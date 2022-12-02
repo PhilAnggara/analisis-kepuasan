@@ -26,15 +26,25 @@
     @csrf
     <div class="card shadow-sm">
       <div class="card-header">
-        Responden
+        Data Diri
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col">
-            <select class="form-select" name="id_responden" id="id_responden" required>
-              <option value="" selected disabled>-- Pilih responden --</option>
+          <div class="col-md-6">
+            <label class="form-label" for="nama">Nama</label>
+            <select class="form-select" name="nama" id="nama" required>
+              <option value="" selected disabled>-- Pilih nama --</option>
               @foreach ($responden as $r)
                 <option value="{{ $r->id }}">{{ $r->nama }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="no_antrian">Nomor antrian</label>
+            <select class="form-select" name="no_antrian" id="no_antrian" required>
+              <option value="" selected disabled>-- Pilih nomor antrian --</option>
+              @foreach ($responden as $r)
+                <option value="{{ $r->id }}">{{ $r->no_antrian }}</option>
               @endforeach
             </select>
           </div>

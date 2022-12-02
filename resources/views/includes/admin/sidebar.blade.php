@@ -54,18 +54,18 @@
         </li>
 
         <li class="sidebar-item {{ Request::is('admin/kusioner*') ? 'active' : '' }}">
-          <a href="{{ route('admin-kusioner') }}" class="sidebar-link">
+          <a href="{{ route('kusioner.index') }}" class="sidebar-link">
             <i class="bi bi-file-earmark-text-fill"></i>
             <span>Kusioner</span>
           </a>
         </li>
 
-        <li class="sidebar-item {{ Request::is('admin/analisis*') ? 'active' : '' }}">
+        {{-- <li class="sidebar-item {{ Request::is('admin/analisis*') ? 'active' : '' }}">
           <a href="{{ route('analisis') }}" class="sidebar-link">
             <i class="bi bi-bar-chart-line-fill"></i>
             <span>Analisis</span>
           </a>
-        </li>
+        </li> --}}
 
         @if (auth()->user()->role == 'Super Admin')
           <li class="sidebar-item {{ Request::is('admin/kelola-admin*') ? 'active' : '' }}">

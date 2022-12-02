@@ -15,125 +15,27 @@ class RespondenSeeder extends Seeder
      */
     public function run()
     {
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Satu',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Dua',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Tiga',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Empat',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Lima',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Enam',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Tujuh',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Delapan',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Sembilan',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
-        Responden::create([
-            'id_kusioner' => 1,
-            'nama' => 'Responden Sepuluh',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
-            'selesai' => true,
-        ]);
+        Responden::factory(30)->create();
         
+        ///////////////////
         Responden::create([
             'id_kusioner' => 1,
-            'nama' => 'Responden Sebelas',
-            'telp' => '081234567890',
+            'nama' => fake()->name(),
+            'telp' => '082298765432',
             'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
+            'alamat' => 'Langowan Utara',
             'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
+            'no_antrian' => '31A',
             'selesai' => false,
         ]);
         Responden::create([
             'id_kusioner' => 1,
-            'nama' => 'Responden Dua Belas',
-            'telp' => '081234567890',
-            'pendidikan' => 'S1',
-            'alamat' => 'Langowan',
-            'pekerjaan' => 'Dokter',
-            'kunjungan' => '1',
+            'nama' => fake()->name(),
+            'telp' => '085112345678',
+            'pendidikan' => 'SMA',
+            'alamat' => 'Langowan Barat',
+            'pekerjaan' => 'Petani',
+            'no_antrian' => '32A',
             'selesai' => false,
         ]);
     }

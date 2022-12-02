@@ -53,7 +53,16 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'password' => ['required', 'confirmed', Password::defaults()],
+        ]);
+
+        $item = User::find($id);
+        $item->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->back()->with('success', 'Password berhasil diubah!');
     }
 
     public function destroy($id)

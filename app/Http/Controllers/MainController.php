@@ -57,15 +57,11 @@ class MainController extends Controller
             'responden' => $responden,
         ]);
     }
+    
     public function persepsiStore(Request $request)
     {
         $responden = Responden::find($request->id_responden);
         $jawaban = Jawaban::where('id_responden', $request->id_responden)->get();
-        // return response()->json([
-        //     'request' => $request->all(),
-        //     'responden' => $responden,
-        //     'jawaban' => $jawaban,
-        // ]);
 
         $responden->update([
             'selesai' => 1,
@@ -82,14 +78,6 @@ class MainController extends Controller
     public function admin()
     {
         return view('pages.admin.beranda');
-    }
-
-    public function adminKusioner()
-    {
-        $items = Kusioner::all();
-        return view('pages.admin.kusioner', [
-            'items' => $items,
-        ]);
     }
 
     public function analisis()
@@ -111,7 +99,7 @@ class MainController extends Controller
         $csi = MyFunction::csi($wt);
         $gap = MyFunction::gap($mean);
 
-        return view('pages.admin.analisis-detail', [
+        return view('pages.admin.kusioner-analisis', [
             'item' => $item,
             'responden' => $responden,
             'total' => $total,

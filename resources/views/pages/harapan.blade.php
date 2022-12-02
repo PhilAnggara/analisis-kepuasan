@@ -37,7 +37,7 @@
           </div>
           <div class="col-md-6">
             <label class="form-label" for="telp">No. Telepon</label>
-            <input type="text" id="telp" class="form-control" name="telp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+            <input type="text" id="telp" class="form-control" name="telp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" autocomplete="off" maxlength="12" required>
           </div>
           <div class="col-md-6">
             <label class="form-label" for="pendidikan">Pendidikan</label>
@@ -61,8 +61,8 @@
             <input type="text" id="pekerjaan" class="form-control" name="pekerjaan" autocomplete="off" required>
           </div>
           <div class="col-md-6">
-            <label class="form-label" for="kunjungan">Kunjungan yang ke :</label>
-            <input type="number" id="kunjungan" class="form-control" name="kunjungan" required>
+            <label class="form-label" for="no_antrian">Nomor Antrian :</label>
+            <input type="text" id="no_antrian" class="form-control" name="no_antrian" autocomplete="off" required>
           </div>
         </div>
       </div>

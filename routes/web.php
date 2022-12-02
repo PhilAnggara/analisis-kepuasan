@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KusionerController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,9 @@ Route::get('kusioner-persepsi-{item:id}', [MainController::class, 'persepsi'])->
 Route::post('kusioner-persepsi', [MainController::class, 'persepsiStore'])->name('kusioner-persepsi.store');
 Route::prefix('admin')->middleware(['auth', 'role:Admin,Super Admin'])->group(function () {
     Route::get('/', [MainController::class, 'admin'])->name('admin');
-    Route::get('kusioner', [MainController::class, 'adminKusioner'])->name('admin-kusioner');
+    Route::resource('kusioner', KusionerController::class);
     Route::get('analisis', [MainController::class, 'analisis'])->name('analisis');
-    Route::get('analisis/{item:id}', [MainController::class, 'analisisDetail'])->name('analisis.detail');
+    Route::get('kusioner/{item:id}/analisis', [MainController::class, 'analisisDetail'])->name('analisis.detail');
     Route::resource('kelola-admin', AdminController::class)->middleware('role:Super Admin');
 });
 

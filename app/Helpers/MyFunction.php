@@ -66,14 +66,18 @@ class MyFunction
                 'index' => $loopIndex,
                 'harapan' => $m['harapan'],
                 'persepsi' => $m['persepsi'],
-                'gap' => $m['harapan'] - $m['persepsi'],
+                'gap' => $m['persepsi'] - $m['harapan'],
             ]);
             $loopIndex++;
         }
         $result = $result->sortByDesc('gap');
         $result2 = collect();
-        $rank = 1;
+        $rank = 0;
+        $gapNow = null;
         foreach ($result as $r) {
+            if ($gapNow != $r['gap']) {
+                $rank++;
+            }
             $result2->push([
                 'index' => $r['index'],
                 'harapan' => $r['harapan'],
@@ -81,7 +85,7 @@ class MyFunction
                 'gap' => $r['gap'],
                 'rank' => $rank,
             ]);
-            $rank++;
+            $gapNow = $r['gap'];
         }
         return $result2->sortBy('index');
     }

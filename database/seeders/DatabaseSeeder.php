@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             PertanyaanSeeder::class,
             RespondenSeeder::class,
             JawabanSeeder::class,
+            JawabanSeeder2::class,
+            JawabanSeeder3::class,
         ]);
     }
 }

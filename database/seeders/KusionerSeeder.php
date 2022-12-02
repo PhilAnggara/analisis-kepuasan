@@ -17,7 +17,7 @@ class KusionerSeeder extends Seeder
     {
         Kusioner::create([
             'nama_kusioner' => 'Kusioner Tingkat Kepuasan Pelayanan PTSP',
-            'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, nulla.',
+            'deskripsi' => 'Kusioner Tingkat Kepuasan Pelayanan PTSP untuk masyarakat yang akan/telah menggunakan layanan PTSP',
             'show' => true,
         ]);
     }

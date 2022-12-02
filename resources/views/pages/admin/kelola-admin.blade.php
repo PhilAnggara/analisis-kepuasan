@@ -12,14 +12,14 @@
     </div>
   </div>
 
-  @if ($errors->any())
+  {{-- @if ($errors->any())
     <div class="alert alert-danger d-flex align-items-center" role="alert">
       <i class="fad fa-circle-exclamation"></i>
       <div class="ms-3">
         Ups, ada yang tidak beres! Periksa kembail inputan anda.
       </div>
     </div>
-  @endif
+  @endif --}}
 
   @php($aosDelay = 100)
 
