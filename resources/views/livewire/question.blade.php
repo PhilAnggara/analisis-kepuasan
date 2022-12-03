@@ -1,15 +1,18 @@
 <div>
-  @for ($i = 0; $i < $count; $i++)
+  @for ($i = 1; $i <= $count; $i++)
     <div class="col-12">
       <div class="card shadow-sm">
+        <div class="card-header">
+          #{{ $i }}
+        </div>
         <div class="card-body">
           <div class="form-group">
             <label for="harapan">Pertanyaan Harapan</label>
-            <input type="text" id="harapan" class="form-control" name="pertanyaan[{{ $count }}][harapan]" autocomplete="off" required>
+            <input type="text" id="harapan" class="form-control" name="pertanyaan[{{ $i }}][harapan]" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="persepsi">Pertanyaan Persepsi</label>
-            <input type="text" id="persepsi" class="form-control" name="pertanyaan[{{ $count }}][persepsi]" autocomplete="off" required>
+            <input type="text" id="persepsi" class="form-control" name="pertanyaan[{{ $i }}][persepsi]" autocomplete="off" required>
           </div>
         </div>
       </div>

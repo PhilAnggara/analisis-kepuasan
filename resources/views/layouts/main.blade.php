@@ -28,6 +28,7 @@
   @stack('prepend-script')
   <script src="{{ url('src/assets/js/pages/dashboard.js') }}"></script>
   @include('includes.script')
+  @include('sweetalert::alert')
   @livewireScripts
   @stack('addon-script')
 

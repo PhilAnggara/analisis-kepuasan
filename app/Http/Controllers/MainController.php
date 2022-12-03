@@ -13,7 +13,15 @@ class MainController extends Controller
     public function index()
     {
         $items = Kusioner::where('show', true)->get();
-        return view('pages.beranda', [
+        return view('pages.beranda-harapan', [
+            'items' => $items,
+        ]);
+    }
+    
+    public function indexPersepsi()
+    {
+        $items = Kusioner::where('show', true)->get();
+        return view('pages.beranda-persepsi', [
             'items' => $items,
         ]);
     }
@@ -51,10 +59,13 @@ class MainController extends Controller
     
     public function persepsi(Kusioner $item)
     {
-        $responden = $item->responden()->where('selesai', 0)->get();
+        $responden = $item->responden()->where('selesai', 0)->get()->shuffle();
+        $responden2 = $responden->shuffle();
+
         return view('pages.persepsi', [
             'item' => $item,
             'responden' => $responden,
+            'responden2' => $responden2,
         ]);
     }
     
@@ -72,7 +83,7 @@ class MainController extends Controller
             ]);
         }
 
-        return redirect()->route('beranda')->with('success', 'Jawaban berhasil dikirim!');
+        return redirect()->route('beranda-persepsi')->with('success', 'Jawaban berhasil dikirim!');
     }
     
     public function admin()

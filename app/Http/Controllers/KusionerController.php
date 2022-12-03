@@ -11,7 +11,7 @@ class KusionerController extends Controller
 {
     public function index()
     {
-        $items = Kusioner::all();
+        $items = Kusioner::all()->sortDesc();
         return view('pages.admin.kusioner', [
             'items' => $items,
         ]);
@@ -25,6 +25,13 @@ class KusionerController extends Controller
     public function store(Request $request)
     {
         // return response()->json($request->all());
+
+        $recents = Kusioner::where('show', 1)->get();
+        foreach ($recents as $recent) {
+            $recent->show = 0;
+            $recent->save();
+        }
+
         $kusioner = Kusioner::create([
             'nama_kusioner' => $request->nama_kusioner,
             'deskripsi' => $request->deskripsi,

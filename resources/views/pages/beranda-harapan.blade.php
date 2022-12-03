@@ -16,13 +16,9 @@
               <div class="card-body text-center">
                 <h4 class="card-title">{{ $item->nama_kusioner }}</h4>
                 <div class="dropdown">
-                  <button class="btn btn-lg btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mulai
-                  </button>
-                  <ul class="dropdown-menu shadow">
-                    <li><a class="dropdown-item" href="{{ route('kusioner-harapan', $item->id) }}">Kusioner Harapan</a></li>
-                    <li><a class="dropdown-item" href="{{ route('kusioner-persepsi', $item->id) }}">Kusioner Persepsi</a></li>
-                  </ul>
+                  <a class="btn btn-lg btn-primary" href="{{ route('kusioner-harapan', $item->id) }}">
+                    Mulai Kusioner Harapan
+                  </a>
                 </div>
               </div>
             </div>

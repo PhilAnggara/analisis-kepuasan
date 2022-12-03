@@ -31,14 +31,29 @@
         <div class="col">
           <div data-aos="zoom-in" data-aos-delay="{{ $aosDelay }}" class="card h-100 h-card">
             <div class="card-body">
-              <h5 class="card-title">{{ $item->nama_kusioner }}</h5>
+              <h5 class="card-title">
+                {{ $item->nama_kusioner }}
+              </h5>
               <p class="card-text"><small class="text-muted">{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM YYYY') }}</small></p>
               <p class="card-text">{{ $item->deskripsi }}</p>
               <a href="{{ route('kusioner.show', $item->id) }}" class="stretched-link"></a>
             </div>
-            <div class="card-footer py-2">
-              <i class="fal fa-users"></i>
-              <small class="ms-2">{{ $item->responden->count() }} responden</small>
+            <div class="card-footer py-2 d-flex justify-content-between">
+              <div>
+                <i class="fal fa-users"></i>
+                <small class="ms-2">{{ $item->responden->count() }} responden</small>
+              </div>
+              @if ($item->show)
+                <span class="badge rounded-pill bg-light-primary">
+                  <i class="fa fa-toggle-on text-primary"></i>
+                  Aktif
+                </span>
+              @else
+                <span class="badge rounded-pill bg-light-secondary">
+                  <i class="fa fa-toggle-off"></i>
+                  Tidak Aktif
+                </span>
+              @endif
             </div>
           </div>
         </div>

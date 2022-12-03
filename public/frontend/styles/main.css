@@ -107,6 +107,21 @@
   height: 65px;
 }
 
+.active-switch .form-check-input:checked {
+  background-color: #435ebe;
+  border-color: #435ebe;
+}
+.active-switch .form-check-input:focus {
+  border-color: #a1afdf;
+}
+.active-switch .form-check-label {
+  color: #002152;
+}
+
+.la-sm {
+  color: #435ebe !important;
+}
+
 /*==============================================================
 	Global Styles End
 ==============================================================*//*# sourceMappingURL=main.css.map */

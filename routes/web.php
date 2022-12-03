@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('beranda');
+Route::get('beranda-persepsi', [MainController::class, 'indexPersepsi'])->name('beranda-persepsi');
 Route::get('kusioner-harapan-{item:id}', [MainController::class, 'harapan'])->name('kusioner-harapan');
 Route::post('kusioner-harapan', [MainController::class, 'harapanStore'])->name('kusioner-harapan.store');
 Route::get('kusioner-persepsi-{item:id}', [MainController::class, 'persepsi'])->name('kusioner-persepsi');

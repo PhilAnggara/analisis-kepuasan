@@ -15,11 +15,11 @@
 <div class="container pb-5">
   <div class="card shadow-sm mt-5">
     <div class="card-header">
-      <h4 class="card-title">Kusioner Harapan</h4>
+      <h4 class="card-title">{{ $item->nama_kusioner }} (Kusioner Harapan)</h4>
     </div>
-    {{-- <div class="card-body">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ea unde vel alias, eum quam necessitatibus dolorem similique placeat quibusdam?</p>
-    </div> --}}
+    <div class="card-body">
+      <p>{{ $item->deskripsi }}</p>
+    </div>
   </div>
 
   <form action="{{ route('kusioner-harapan.store') }}" method="post">
