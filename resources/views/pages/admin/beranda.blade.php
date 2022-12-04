@@ -104,7 +104,7 @@
     colors:'#2ba15e',
     series: [{
       name: "Responden",
-      data: [9, 20, 30, 20, 10, 20, 30, 20, 10, 20, 30, 20]
+      data: [9, 20, 30, 20, 10, 20, 30, 20, 10, 20, 35, 30]
     }],
     xaxis: {
       categories: 

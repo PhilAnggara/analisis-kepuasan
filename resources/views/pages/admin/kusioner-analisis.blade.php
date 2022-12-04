@@ -112,72 +112,76 @@
         </div>
       </div>
       
-      <div class="col-12 col-md-2">
+      <div class="col-12 col-md-3">
         <div data-aos="zoom-in" data-aos-delay="300" class="card shadow-sm">
           <div class="card-body">
             <h5 class="card-title mb-3">MIS & MSS</h5>
-            <table class="table table-striped table-hover table-bordered text-center">
-              <thead class="table-success">
-                <tr>
-                  <th></th>
-                  <th>MIS</th>
-                  <th>MSS</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($mean as $m)
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered text-center">
+                <thead class="table-success">
                   <tr>
-                    <th>{{ $loop->iteration }}</th>
-                    <td>{{ number_format($m['harapan'], 2) }}</td>
-                    <td>{{ number_format($m['persepsi'], 2) }}</td>
+                    <th></th>
+                    <th>MIS</th>
+                    <th>MSS</th>
                   </tr>
-                @endforeach
-              </tbody>
-              <tfoot class="table-success">
-                <tr>
-                  <th>Total</th>
-                  <td>{{ number_format($mean->sum('harapan'), 2) }}</td>
-                  <td>{{ number_format($mean->sum('persepsi'), 2) }}</td>
-                </tr>
-              </tfoot>
-            </table>
+                </thead>
+                <tbody>
+                  @foreach ($mean as $m)
+                    <tr>
+                      <th>{{ $loop->iteration }}</th>
+                      <td>{{ number_format($m['harapan'], 2) }}</td>
+                      <td>{{ number_format($m['persepsi'], 2) }}</td>
+                    </tr>
+                  @endforeach
+                </tbody>
+                <tfoot class="table-success">
+                  <tr>
+                    <th>Total</th>
+                    <td>{{ number_format($mean->sum('harapan'), 2) }}</td>
+                    <td>{{ number_format($mean->sum('persepsi'), 2) }}</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
       </div>
       
-      <div class="col-12 col-md-2">
+      <div class="col-12 col-md-3">
         <div data-aos="zoom-in" data-aos-delay="400" class="card shadow-sm">
           <div class="card-body">
             <h5 class="card-title mb-3">WF, WS & WAT</h5>
-            <table class="table table-striped table-hover table-bordered text-center">
-              <thead class="table-success">
-                <tr>
-                  <th></th>
-                  <th>WF</th>
-                  <th>WS</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($wfws as $w)
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered text-center">
+                <thead class="table-success">
                   <tr>
-                    <th>{{ $loop->iteration }}</th>
-                    <td>{{ number_format($w['wf'], 2) }}</td>
-                    <td>{{ number_format($w['ws'], 2) }}</td>
+                    <th></th>
+                    <th>WF</th>
+                    <th>WS</th>
                   </tr>
-                @endforeach
-              </tbody>
-              <tfoot class="table-success">
-                <tr>
-                  <th class="table-success" colspan="2">WAT</th>
-                  <td>{{ number_format($wt, 2) }}</td>
-                </tr>
-              </tfoot>
-            </table>
+                </thead>
+                <tbody>
+                  @foreach ($wfws as $w)
+                    <tr>
+                      <th>{{ $loop->iteration }}</th>
+                      <td>{{ number_format($w['wf'], 2) }}</td>
+                      <td>{{ number_format($w['ws'], 2) }}</td>
+                    </tr>
+                  @endforeach
+                </tbody>
+                <tfoot class="table-success">
+                  <tr>
+                    <th class="table-success" colspan="2">WAT</th>
+                    <td>{{ number_format($wt, 2) }}</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
       </div>
       
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-6">
         <div data-aos="zoom-in" data-aos-delay="500" class="card shadow-sm">
           <div class="card-body">
             <h5 class="card-title mb-3">CSI</h5>
@@ -186,32 +190,34 @@
         </div>
       </div>
       
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-6">
         <div data-aos="zoom-in" data-aos-delay="600" class="card shadow-sm">
           <div class="card-body">
             <h5 class="card-title mb-3">GAP</h5>
-            <table class="table table-striped table-hover table-bordered text-center">
-              <thead class="table-success">
-                <tr>
-                  <th></th>
-                  <th>Rata-rata Skor Persepsi</th>
-                  <th>Rata-rata Skor Harapan</th>
-                  <th>GAP</th>
-                  <th>Rank</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($gap as $g)
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered text-center">
+                <thead class="table-success">
                   <tr>
-                    <th>{{ $loop->iteration }}</th>
-                    <td>{{ number_format($g['persepsi'], 2) }}</td>
-                    <td>{{ number_format($g['harapan'], 2) }}</td>
-                    <td>{{ number_format($g['gap'], 2) }}</td>
-                    <td class="fw-light fst-italic text-warning">#{{ $g['rank'] }}</td>
+                    <th></th>
+                    <th>Rata-rata Skor Persepsi</th>
+                    <th>Rata-rata Skor Harapan</th>
+                    <th>GAP</th>
+                    <th>Rank</th>
                   </tr>
-                @endforeach
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  @foreach ($gap as $g)
+                    <tr>
+                      <th>{{ $loop->iteration }}</th>
+                      <td>{{ number_format($g['persepsi'], 2) }}</td>
+                      <td>{{ number_format($g['harapan'], 2) }}</td>
+                      <td>{{ number_format($g['gap'], 2) }}</td>
+                      <td class="fw-light fst-italic text-warning">#{{ $g['rank'] }}</td>
+                    </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

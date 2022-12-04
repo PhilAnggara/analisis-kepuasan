@@ -30,4 +30,9 @@ class Kusioner extends Model
     {
         return $this->hasMany(Responden::class, 'id_kusioner', 'id');
     }
+
+    public function respondenSelesai()
+    {
+        return $this->hasMany(Responden::class, 'id_kusioner', 'id')->where('selesai', 1);
+    }
 }

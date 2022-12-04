@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\MyFunction;
 use App\Models\Jawaban;
 use App\Models\Kusioner;
 use App\Models\Responden;
+use App\Helpers\MyFunction;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -35,15 +36,14 @@ class MainController extends Controller
     
     public function harapanStore(Request $request)
     {
-        // dd($request->all());
         $responden = Responden::create([
             'id_kusioner' => $request->id_kusioner,
-            'nama' => $request->nama,
+            'nama' => Str::title($request->nama),
             'telp' => $request->telp,
             'pendidikan' => $request->pendidikan,
             'alamat' => $request->alamat,
             'pekerjaan' => $request->pekerjaan,
-            'kunjungan' => $request->kunjungan,
+            'no_antrian' => Str::upper($request->no_antrian),
         ]);
 
         foreach ($request->pertanyaan as $key => $value) {
@@ -101,7 +101,7 @@ class MainController extends Controller
 
     public function analisisDetail($id)
     {
-        $item = Kusioner::find($id)->with('responden.jawaban')->first();
+        $item = Kusioner::where('id', $id)->with('responden.jawaban')->first();
         $responden = Responden::where('id_kusioner', $item->id)->where('selesai',1)->get();
         $total = MyFunction::total($item);
         $mean = MyFunction::mean($total, $responden);

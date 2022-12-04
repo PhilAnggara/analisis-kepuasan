@@ -98,3 +98,7 @@
 
 </div>
 @endsection
+
+@push('addon-style')
+  <link rel="stylesheet" href="{{ url('frontend/styles/loading.css') }}">
+@endpush

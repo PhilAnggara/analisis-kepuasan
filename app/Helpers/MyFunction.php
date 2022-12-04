@@ -72,10 +72,10 @@ class MyFunction
         }
         $result = $result->sortByDesc('gap');
         $result2 = collect();
-        $rank = 0;
+        $rank = 1;
         $gapNow = null;
         foreach ($result as $r) {
-            if ($gapNow != $r['gap']) {
+            if ($gapNow != $r['gap'] && $gapNow != null) {
                 $rank++;
             }
             $result2->push([

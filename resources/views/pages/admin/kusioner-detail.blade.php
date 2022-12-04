@@ -53,6 +53,16 @@
             </p>
             <p class="card-text">{{ $item->deskripsi }}</p>
           </div>
+          <div class="card-footer py-2 d-flex">
+            <div>
+              <i class="fal fa-users text-warning"></i>
+              <small class="ms-2">{{ $item->responden->count() }} responden kusioner harapan</small>
+            </div>
+            <div class="ms-5">
+              <i class="fal fa-users text-success"></i>
+              <small class="ms-2">{{ $item->respondenSelesai->count() }} responden kusioner persepsi</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>

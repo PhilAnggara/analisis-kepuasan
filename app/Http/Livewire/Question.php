@@ -8,7 +8,7 @@ class Question extends Component
 {
     public $count = 1;
      
-    public function increment()
+    public function addNew()
     {
         $this->count++;
     }
