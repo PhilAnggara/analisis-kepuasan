@@ -45,45 +45,6 @@
         </div>
         
         @livewire('question')
-
-        {{-- <div class="col-12">
-          <div data-aos="zoom-in" data-aos-delay="200" class="card shadow-sm">
-            <div class="card-body">
-              <div class="form-group">
-                <label for="harapan">Pertanyaan Harapan</label>
-                <input type="text" id="harapan" class="form-control" name="pertanyaan[1][harapan]" autocomplete="off" required>
-              </div>
-              <div class="form-group">
-                <label for="persepsi">Pertanyaan Persepsi</label>
-                <input type="text" id="persepsi" class="form-control" name="pertanyaan[1][persepsi]" autocomplete="off" required>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-12">
-          <div data-aos="zoom-in" data-aos-delay="200" class="card shadow-sm">
-            <div class="card-body">
-              <div class="form-group">
-                <label for="harapan">Pertanyaan Harapan</label>
-                <input type="text" id="harapan" class="form-control" name="pertanyaan[2][harapan]" autocomplete="off" required>
-              </div>
-              <div class="form-group">
-                <label for="persepsi">Pertanyaan Persepsi</label>
-                <input type="text" id="persepsi" class="form-control" name="pertanyaan[2][persepsi]" autocomplete="off" required>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-12">
-          <div data-aos="zoom-in" data-aos-delay="300" class="card card-plus h-card">
-            <div class="card-body d-flex justify-content-center align-items-center">
-              <i class="fas fa-plus fa-5x"></i>
-              <a href="{{ route('kusioner.create') }}" class="stretched-link"></a>
-            </div>
-          </div>
-        </div> --}}
   
         <div class="d-flex justify-content-end">
           <button type="submit" class="btn btn-primary icon icon-left">

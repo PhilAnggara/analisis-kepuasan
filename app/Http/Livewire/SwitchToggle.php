@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class ActiveToggle extends Component
+class SwitchToggle extends Component
 {
     public $item;
     public $check;
@@ -16,7 +16,7 @@ class ActiveToggle extends Component
 
     public function render()
     {
-        return view('livewire.active-toggle');
+        return view('livewire.switch-toggle');
     }
 
     public function updatedCheck()

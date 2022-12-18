@@ -104,24 +104,10 @@
     colors:'#2ba15e',
     series: [{
       name: "Responden",
-      data: [9, 20, 30, 20, 10, 20, 30, 20, 10, 20, 35, 30]
+      data: {!! json_encode($respondenBulanan[0]['jumlah']) !!}
     }],
     xaxis: {
-      categories: 
-      [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
+      categories: {!! json_encode($respondenBulanan[0]['bulan']) !!},
     },
   };
 

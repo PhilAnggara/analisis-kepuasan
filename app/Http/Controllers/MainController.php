@@ -54,7 +54,7 @@ class MainController extends Controller
             ]);
         }
 
-        return redirect()->route('beranda')->with('success', 'Jawaban berhasil dikirim!');
+        return redirect()->route('beranda')->with('success', 'Jawaban anda berhasil dikirim!');
     }
     
     public function persepsi(Kusioner $item)
@@ -83,12 +83,16 @@ class MainController extends Controller
             ]);
         }
 
-        return redirect()->route('beranda-persepsi')->with('success', 'Jawaban berhasil dikirim!');
+        return redirect()->route('beranda-persepsi')->with('success', 'Jawaban anda berhasil dikirim!');
     }
     
     public function admin()
     {
-        return view('pages.admin.beranda');
+        $respondenBulanan = MyFunction::respondenBulanan();
+        
+        return view('pages.admin.beranda', [
+            'respondenBulanan' => $respondenBulanan,
+        ]);
     }
 
     public function analisis()
@@ -102,7 +106,7 @@ class MainController extends Controller
     public function analisisDetail($id)
     {
         $item = Kusioner::where('id', $id)->with('responden.jawaban')->first();
-        $responden = Responden::where('id_kusioner', $item->id)->where('selesai',1)->get();
+        $responden = Responden::where('id_kusioner', $id)->where('selesai',1)->get();
         $total = MyFunction::total($item);
         $mean = MyFunction::mean($total, $responden);
         $wfws = MyFunction::wfws($mean);

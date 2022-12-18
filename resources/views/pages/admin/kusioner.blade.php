@@ -38,22 +38,12 @@
               <p class="card-text">{{ $item->deskripsi }}</p>
               <a href="{{ route('kusioner.show', $item->id) }}" class="stretched-link"></a>
             </div>
-            <div class="card-footer py-2 d-flex justify-content-between">
+            <div class="card-footer py-2 d-flex justify-content-between" style="z-index: 10000">
               <div>
                 <i class="fal fa-users"></i>
                 <small class="ms-2">{{ $item->responden->count() }} responden</small>
               </div>
-              @if ($item->show)
-                <span class="badge rounded-pill bg-light-primary">
-                  <i class="fa fa-toggle-on text-primary"></i>
-                  Aktif
-                </span>
-              @else
-                <span class="badge rounded-pill bg-light-secondary">
-                  <i class="fa fa-toggle-off"></i>
-                  Tidak Aktif
-                </span>
-              @endif
+              @livewire('button-toggle', ['item' => $item])
             </div>
           </div>
         </div>

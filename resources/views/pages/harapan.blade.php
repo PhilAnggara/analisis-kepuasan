@@ -62,7 +62,7 @@
           </div>
           <div class="col-md-6">
             <label class="form-label" for="no_antrian">Nomor Antrian :</label>
-            <input type="text" id="no_antrian" class="form-control" pattern="[A-Za-z]{3}" name="no_antrian" autocomplete="off" maxlength="4" required>
+            <input type="text" id="no_antrian" class="form-control" name="no_antrian" autocomplete="off" maxlength="4" required>
           </div>
         </div>
       </div>

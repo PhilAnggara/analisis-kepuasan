@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use App\Models\Kusioner;
 use App\Models\Responden;
+use Carbon\Carbon;
 
 class MyFunction
 {
@@ -88,5 +89,26 @@ class MyFunction
             $gapNow = $r['gap'];
         }
         return $result2->sortBy('index');
+    }
+
+
+
+    public static function respondenBulanan()
+    {
+        $result = collect();
+        
+        $responden = collect();
+        $bulan = collect();
+        for ($i=0; $i < 12; $i++) {
+            $bulan->push(Carbon::parse(Carbon::now()->subMonths(11 - $i))->isoFormat('MMM'));
+            $responden->push(Responden::whereMonth('created_at', Carbon::now()->subMonths(11 - $i))->count());
+        }
+
+        $result->push([
+            'bulan' => $bulan,
+            'jumlah' => $responden,
+        ]);
+
+        return $result;
     }
 }
