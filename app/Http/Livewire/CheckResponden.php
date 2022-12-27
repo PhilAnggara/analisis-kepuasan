@@ -30,7 +30,10 @@ class CheckResponden extends Component
             $this->authorized = true;
             $this->namaResponden = $res->nama;
         } else {
-            return redirect()->route('beranda-persepsi');
+            // return redirect()->route('beranda-persepsi');
+            $this->idResponden = '';
+            $this->nomorAntrian = '';
+            $this->dispatchBrowserEvent('incorrect');
         }
     }
 }

@@ -37,3 +37,13 @@ function keluar() {
     }
   })
 }
+
+window.addEventListener('incorrect',function(e){
+  Swal.fire({
+    title: 'Data tidak cocok!',
+    text: "Nama dan Nomor antrian tidak cocok. Silahkan cek kembali nama dan nomor antrian anda",
+    icon: 'error',
+    confirmButtonColor: '#00923F',
+    confirmButtonText: 'Oke!',
+  });
+});

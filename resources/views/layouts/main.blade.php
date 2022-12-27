@@ -18,7 +18,7 @@
     <div id="main" class="layout-horizontal">
       <header class="mb-5">
         @include('includes.header')
-        @include('includes.navbar')
+        {{-- @include('includes.navbar') --}}
       </header>
       @yield('content')
       {{-- @include('includes.footer') --}}

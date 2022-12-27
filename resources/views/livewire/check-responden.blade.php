@@ -46,19 +46,19 @@
           <input type="hidden" name="pertanyaan[{{ $i->id }}]" value="">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-1" value="1" required>
-            <label class="form-check-label" for="pilihan-{{ $i->id }}-1">1</label>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-1">Sangat Buruk</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-2" value="2" required>
-            <label class="form-check-label" for="pilihan-{{ $i->id }}-2">2</label>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-2">Buruk</label>
           </div>      
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-3" value="3" required>
-            <label class="form-check-label" for="pilihan-{{ $i->id }}-3">3</label>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-3">Baik</label>
           </div>      
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="pertanyaan[{{ $i->id }}]" id="pilihan-{{ $i->id }}-4" value="4" required>
-            <label class="form-check-label" for="pilihan-{{ $i->id }}-4">4</label>
+            <label class="form-check-label" for="pilihan-{{ $i->id }}-4">Sangat Baik</label>
           </div>      
         </div>
       </div>
