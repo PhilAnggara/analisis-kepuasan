@@ -74,9 +74,9 @@ class MyFunction
         $result = $result->sortByDesc('gap');
         $result2 = collect();
         $rank = 1;
-        $gapNow = null;
+        $gapNow = 1000;
         foreach ($result as $r) {
-            if ($gapNow != $r['gap'] && $gapNow != null) {
+            if ($gapNow != 1000 && $gapNow > $r['gap']) {
                 $rank++;
             }
             $result2->push([
